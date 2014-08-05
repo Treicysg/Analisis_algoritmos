@@ -1,32 +1,38 @@
+################################################################################
+# Tecnológico de Costa Rica
+# Análisis de Algoritmos
+# Tarea Corta 1
+# Estudiante : Treicy Sánchez Gutiérrez
+################################################################################
 
 import random
 import time
 
-#The selection Sort
+#Selection Sort
+
 def selection_sort(L):
  
-    # Loop through the entire array
     for curPos in range( len(L) ):
-        # Find the position that has the smallest number
-        # Start with the current position
+        # Encuentra la posición con el número más pequeño
+        
         minPos = curPos
  
-        # Scan left to right (end of the list)
         for scanPos in range(curPos+1, len(L) ):
  
-            # Is this position smallest?
+            
             if L[scanPos] < L[minPos]:
  
-                # It is, mark this position as the smallest
+               
                 minPos = scanPos
  
-        # Swap the two values
+        # intercambia los 2 valores 
         temp = L[minPos]
         L[minPos] = L[curPos]
         L[curPos] = temp
 
 
-#**********BubleSort**********#
+#Bubble Sort
+        
 def bubblesort( A ):
   for i in range( len( A ) ):
     for k in range( len( A ) - 1, i, -1 ):
@@ -39,7 +45,74 @@ def swap( A, x, y ):
   A[x] = A[y]
   A[y] = tmp
 
-  
+
+#Funciones para las medidas de tiempos
+
+def tiempoDesordenadas(L):
+
+    listaPruebaS = L
+    listaPruebaB = L
+    
+    print("Comportamiento con Listas desordenadas")
+    
+    inicio = time.time()
+    bubblesort(listaPruebaB)
+    fin =  time.time()
+    total = fin- inicio
+    print("Tiempo de Bubble Sort : ", total)
+   
+    inicioS = time.time()
+    selection_sort(listaPruebaS)
+    finS =  time.time()
+    totalS = finS - inicioS
+    print("Tiempo de Selection Sort : ", totalS)
+
+def tiempoOrdenadas(L):
+
+    listaOrdenada = sorted(L)
+    print("\n")
+    print("Comportamiento con listas ordenadas")
+    
+    start = time.time()
+    bubblesort(listaOrdenada)
+    end =  time.time()
+    tiempo = end - start
+    print("Tiempo de Bubble Sort : ", tiempo)
+
+    startS = time.time()
+    selection_sort(listaOrdenada)
+    endS =  time.time()
+    tiempoS = endS- startS
+    print("Tiempo de Selection Sort : ", tiempoS)
+
+def tiempoReverso(L):
+
+    print("\n")
+    print("Comportamiento con listas en orden descendente")
+
+    L.sort()
+    L.reverse()
+
+    s = time.time()
+    bubblesort(L)
+    e =  time.time()
+    t = e - s
+    print("Tiempo de Bubble Sort : ", t)
+
+    L.reverse()
+    
+    ss = time.time()
+    selection_sort(L)
+    es =  time.time()
+    tS = es- ss
+    print("Tiempo de Selection Sort : ", tS)
+
+    
+    
+
+    
+
+#################################Main#############################################  
 def main():
 
     listaPrueba = []
@@ -49,26 +122,13 @@ def main():
     for indice in range(largoLista) :
         numero = random.randint(1,100000) 
         listaPrueba.append(numero)        
-   
 
-    listaPruebaS = listaPrueba
-    listaPruebaB = listaPrueba
+    tiempoDesordenadas(listaPrueba)
+    tiempoOrdenadas(listaPrueba)
+    tiempoReverso(listaPrueba)
 
-    inicio = time.time()
-    bubblesort(listaPruebaB)
-    fin =  time.time()
-    total = fin- inicio
-    print("Tiempo de Bubble Sort : ", total)
-    
-    
-    
 
-    inicioS = time.time()
-    selection_sort(listaPruebaS)
-    finS =  time.time()
-    totalS = finS- inicioS
-    print("Tiempo de Selection Sort : ", totalS)
-  
+
 
     
 
