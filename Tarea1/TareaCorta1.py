@@ -136,7 +136,7 @@ def main():
 
     listaPrueba = []
     
-    largoLista = random.randint(1,20)
+    largoLista = random.randint(1,500)
 
     for indice in range(largoLista) :
         numero = random.randint(1,100000) 
