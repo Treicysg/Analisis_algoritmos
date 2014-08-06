@@ -46,12 +46,16 @@ def swap( A, x, y ):
   A[y] = tmp
 
 
-#Funciones para las medidas de tiempos
+#Funciones para las medidas de Tiempos
 
 def tiempoDesordenadas(L):
+    """La función calcula el tiempo que toma el bubble sort
+    y selection sort en ordenar una lista que se encuentra desordenada"""
 
+  
     listaPruebaS = L
     listaPruebaB = L
+   
     
     print("Comportamiento con Listas desordenadas")
     
@@ -61,37 +65,51 @@ def tiempoDesordenadas(L):
     total = fin- inicio
     print("Tiempo de Bubble Sort : ", total)
    
+   
     inicioS = time.time()
     selection_sort(listaPruebaS)
     finS =  time.time()
     totalS = finS - inicioS
     print("Tiempo de Selection Sort : ", totalS)
 
+    
+    
+
 def tiempoOrdenadas(L):
 
-    listaOrdenada = sorted(L)
+    """La función calcula el tiempo que toma el bubble sort
+    y selection sort en ordenar una lista que ya se encuentra ordenada"""
+
+    
+    sorted(L)
+   
+    
     print("\n")
     print("Comportamiento con listas ordenadas")
     
     start = time.time()
-    bubblesort(listaOrdenada)
+    bubblesort(L)
     end =  time.time()
     tiempo = end - start
     print("Tiempo de Bubble Sort : ", tiempo)
 
+   
     startS = time.time()
-    selection_sort(listaOrdenada)
+    selection_sort(L)
     endS =  time.time()
     tiempoS = endS- startS
     print("Tiempo de Selection Sort : ", tiempoS)
 
 def tiempoReverso(L):
+    """La función calcula el tiempo que toma el bubble sort
+    y selection sort en ordenar una lista que se encuentra revertida"""
 
     print("\n")
     print("Comportamiento con listas en orden descendente")
 
     L.sort()
     L.reverse()
+   
 
     s = time.time()
     bubblesort(L)
@@ -100,6 +118,7 @@ def tiempoReverso(L):
     print("Tiempo de Bubble Sort : ", t)
 
     L.reverse()
+   
     
     ss = time.time()
     selection_sort(L)
@@ -117,15 +136,21 @@ def main():
 
     listaPrueba = []
     
-    largoLista = random.randint(1,500)
+    largoLista = random.randint(1,20)
 
     for indice in range(largoLista) :
         numero = random.randint(1,100000) 
-        listaPrueba.append(numero)        
+        listaPrueba.append(numero)
 
-    tiempoDesordenadas(listaPrueba)
-    tiempoOrdenadas(listaPrueba)
-    tiempoReverso(listaPrueba)
+    print(listaPrueba)   
+    pruebaOrdenada = listaPrueba
+    pruebaDesordenada = listaPrueba
+    pruebaReversa = listaPrueba
+    
+    
+    tiempoDesordenadas(pruebaDesordenada)
+    tiempoOrdenadas(pruebaOrdenada)
+    tiempoReverso(pruebaReversa)
 
 
 
