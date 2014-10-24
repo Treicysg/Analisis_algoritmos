@@ -121,7 +121,7 @@ public class Cambio {
 					
 			
 			Collections.sort(cantidades);
-			int menor = cantidades.get(0);
+			int menor = cantidades.get(1);
 			
 			//Lo siguiente busca la lista que posee ese menor
 			

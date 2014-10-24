@@ -1,0 +1,68 @@
+package Fibonacci;
+
+import java.io.*;
+
+public class Fibonacci {
+ 
+  /**
+   * Función de fibonacci, se implementa con la técnica Programación Dinámica.
+   * Se comprueba que el número sea positivo.
+   * @param n long
+   * @throws NumeroException
+   * @return long
+   */
+  public static long fibonacci_pd(long n) throws NumeroException {
+    if (n < 0) {
+      throw new NumeroException("No se pueden introducir números negativos");
+    }
+    if (n == 0) {
+      throw new NumeroException("El número tiene que ser mayor que 0");
+    }
+    long[] f = new long[ (int) n + 1];
+    f[0] = 0;
+    f[1] = 1;
+    for (int i = 2; i < n + 1; i++) {
+      f[i] = f[i - 1] + f[i - 2];
+    }
+    return f[ (int) n];
+  }
+ 
+  /**
+   * Función Main. Se pide al usuario un número para calcular su valor mediante
+   * la función de Fibonacci
+   * @param args String[]
+   */
+  public static void main(String[] args) {
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    System.out.println(
+        "\nIntroduzca el numero del que desea calcular la sucesión de Fibonacci: ");
+    try {
+      long numero = Long.parseLong(reader.readLine());
+      System.out.println(
+          "\nEl valor del la función de Fibonacci para el número " + numero +
+          " es: " + fibonacci_pd(numero));
+    }
+    catch (NumberFormatException nfe) {
+      System.err.println("Solamente se puede introducir números");
+      main(args);
+    }
+    catch (NumeroException ne) {
+      System.err.println(ne.getMessage());
+      main(args);
+    }
+    catch (IOException ioe) {
+      System.err.println(ioe.getMessage());
+    }
+  }
+}
+ 
+
+//Excepción usada en el codigo anterior
+
+ 
+public class NumeroException extends Exception {
+ 
+  public NumeroException(String mensaje) {
+    super(mensaje);
+  }
+}

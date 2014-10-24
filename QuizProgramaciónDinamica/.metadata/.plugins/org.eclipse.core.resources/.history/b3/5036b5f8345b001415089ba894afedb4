@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 /*El objetivo es usar la menor cantidad de monedas
  * El problema recibe la cantidad y una lista con las monedas disponibles**/
@@ -106,40 +105,9 @@ public class Cambio {
 	}
 	
 	
-	public ArrayList<Integer> seleccionarSolucion(){
+	public ArrayList<Integer> seleccionarSolucion(ArrayList<ArrayList<Integer>> pSoluciones){
 			
-			ArrayList<Integer> cantidades = new ArrayList<Integer>();
-		 
 			ArrayList<Integer> mejorCaso = new ArrayList<Integer>();
-			
-			for(int j = 0; j < soluciones.size();j++){
-				for(int k = 0; k < soluciones.get(j).size(); k++){
-					
-					
-					int cant =soluciones.get(j).get(k).get(1);
-					cantidades.add(cant);}}
-					
-			
-			Collections.sort(cantidades);
-			int menor = cantidades.get(0);
-			
-			//Lo siguiente busca la lista que posee ese menor
-			
-			for(int j = 0; j < soluciones.size();j++){
-				for(int k = 0; k < soluciones.get(j).size(); k++){
-					
-					
-					if( soluciones.get(j).get(k).get(1) == menor){
-						
-						mejorCaso = soluciones.get(j).get(k);
-						break;
-					}
-					
-				}
-				}
-					
-			
-			
 			return mejorCaso;
 			
 			

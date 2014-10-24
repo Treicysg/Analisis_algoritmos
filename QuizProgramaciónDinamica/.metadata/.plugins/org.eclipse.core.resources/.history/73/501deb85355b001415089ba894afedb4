@@ -106,17 +106,17 @@ public class Cambio {
 	}
 	
 	
-	public ArrayList<Integer> seleccionarSolucion(){
+	public ArrayList<Integer> seleccionarSolucion( ArrayList<ArrayList<ArrayList<Integer>>> pSoluciones){
 			
 			ArrayList<Integer> cantidades = new ArrayList<Integer>();
 		 
 			ArrayList<Integer> mejorCaso = new ArrayList<Integer>();
 			
-			for(int j = 0; j < soluciones.size();j++){
-				for(int k = 0; k < soluciones.get(j).size(); k++){
+			for(int j = 0; j < pSoluciones.size();j++){
+				for(int k = 0; k < pSoluciones.get(j).size(); k++){
 					
 					
-					int cant =soluciones.get(j).get(k).get(1);
+					int cant = pSoluciones.get(j).get(k).get(1);
 					cantidades.add(cant);}}
 					
 			
@@ -125,13 +125,13 @@ public class Cambio {
 			
 			//Lo siguiente busca la lista que posee ese menor
 			
-			for(int j = 0; j < soluciones.size();j++){
-				for(int k = 0; k < soluciones.get(j).size(); k++){
+			for(int j = 0; j < pSoluciones.size();j++){
+				for(int k = 0; k < pSoluciones.get(j).size(); k++){
 					
 					
-					if( soluciones.get(j).get(k).get(1) == menor){
+					if( pSoluciones.get(j).get(k).get(1) == menor){
 						
-						mejorCaso = soluciones.get(j).get(k);
+						mejorCaso = pSoluciones.get(j).get(k);
 						break;
 					}
 					

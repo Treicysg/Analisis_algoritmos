@@ -10,8 +10,8 @@ public class AplicacionCambio {
 		int cant = pMejorOpcion.get(1);
 		
 		texto+= "La Solución que requiere menor Cantidad de Monedas es :" + "\n";
-		texto+= "Moneda:" + moneda + "\n";
-		texto+= "Cantidad:" + cant + "\n";
+		texto+=  "Moneda:" + moneda + "\n";
+		texto+= "Cantidad" + cant + "\n";
 		
 		System.out.println(texto);
 	}
