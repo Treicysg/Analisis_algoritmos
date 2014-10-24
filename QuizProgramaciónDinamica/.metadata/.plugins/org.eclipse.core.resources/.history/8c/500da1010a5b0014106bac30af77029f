@@ -1,0 +1,139 @@
+import java.util.ArrayList;
+
+/*El objetivo es usar la menor cantidad de monedas
+ * El problema recibe la cantidad y una lista con las monedas disponibles**/
+
+public class Cambio {
+	
+	private int cantidad ;
+	
+	public ArrayList<Integer> monedas = new ArrayList<Integer>();
+	public static  ArrayList<ArrayList<ArrayList<Integer>>> soluciones = new ArrayList<ArrayList<ArrayList<Integer>>>();
+	
+	
+	
+
+	//Genera la lista de soluciones 
+	public void generarSoluciones( int cantidad,ArrayList<Integer> pMonDisponibles){
+		
+		ArrayList<ArrayList<Integer>> resultado = new ArrayList<ArrayList<Integer>>();
+
+		
+	    ArrayList<Integer> psol = new ArrayList<Integer>();
+		
+		
+		for(int i = 0 ; i<pMonDisponibles.size(); i++){
+			
+			resultado = generoSolucion(cantidad, pMonDisponibles, i, psol);
+			soluciones.add(resultado);
+				
+			}
+		
+		System.out.println("Se tienen las soluciones");
+		}
+		
+	
+
+	// Genera una lista con monedas posibles
+	// Función recursiva
+	//En lista sol. El indice sub[0] posee la moneda, sub[1] la cantidad
+
+	public ArrayList<ArrayList<Integer>> generoSolucion(int pCantidad,ArrayList<Integer> pMonDisp, int pIndice, ArrayList<Integer> sol){
+		
+		
+		
+		ArrayList<ArrayList<Integer>> soLFinal = new ArrayList<ArrayList<Integer>>();
+		int inicio = pIndice;
+		
+		if(inicio < pMonDisp .size() ){
+			
+		
+		if( pMonDisp.get(inicio) < pCantidad){
+			
+			int num = pCantidad / pMonDisp.get(inicio);
+			
+			if(pCantidad % pMonDisp.get(inicio) != 0){
+				sol.add(pMonDisp.get(inicio)); //la moneda
+				sol.add(num); // el número de monedas
+				soLFinal.add(sol);
+				generoSolucion(pCantidad % pMonDisp.get(inicio),pMonDisp, inicio+=1,sol);
+				
+			}
+			else{}
+			
+			
+		}
+		else{
+			generoSolucion(pCantidad,pMonDisp, inicio+=1,sol);
+			
+			
+		}
+		}
+		
+	return soLFinal;	
+		
+	}
+	
+	public String imprimoSoluciones(){
+		String msg = "";
+		System.out.println(soluciones.size());
+		for(int j = 0; j < soluciones.size();j++){
+			for(int k = 0; k < soluciones.get(j).size(); k++){
+				int moneda =soluciones.get(j).get(k).get(0);
+				int cant = soluciones.get(j).get(k).get(1);
+				
+				msg+= "Solucion " + j;
+				msg+= "Moneda:" + moneda;
+				msg+= "Cantidad:" + cant;
+				msg+= "-------------------";
+				
+				
+			}
+		}
+		
+		return msg;
+	}
+	
+	
+	public ArrayList<Integer> seleccionarSolucion(ArrayList<ArrayList<Integer>> pSoluciones){
+			
+			ArrayList<Integer> mejorCaso = new ArrayList<Integer>();
+			return mejorCaso;
+			
+			
+			
+		}
+		
+	//Getters and Setters
+	
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+	
+
+	public ArrayList<Integer> getMonedas() {
+		return monedas;
+	}
+
+
+
+	public void setMonedas(ArrayList<Integer> monedas) {
+		this.monedas = monedas;
+	}
+
+	
+
+	public Cambio(int cantidad,ArrayList<Integer> currency ) {
+		setCantidad(cantidad);
+		setMonedas(currency);
+		
+	}
+
+
+
+
+}

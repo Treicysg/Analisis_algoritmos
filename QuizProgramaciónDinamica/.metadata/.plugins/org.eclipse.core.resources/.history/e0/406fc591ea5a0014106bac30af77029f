@@ -1,0 +1,13 @@
+import java.util.ArrayList;
+
+
+public class Cambio {
+	
+	public ArrayList<Integer> monedas = new ArrayList<Integer>();
+	public ArrayList<ArrayList<Integer>> soluciones = new ArrayList<ArrayList<Integer>>();
+
+	public Cambio() {
+		
+	}
+
+}

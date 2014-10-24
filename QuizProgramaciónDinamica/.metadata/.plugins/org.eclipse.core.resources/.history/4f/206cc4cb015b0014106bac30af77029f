@@ -1,0 +1,82 @@
+import java.util.ArrayList;
+
+/*El objetivo es usar la menor cantidad de monedas
+ * El problema recibe la cantidad y una lista con las monedas disponibles**/
+
+public class Cambio {
+	
+	private String cantidad = null;
+	
+	public ArrayList<Integer> monedas = new ArrayList<Integer>();
+	public ArrayList<ArrayList<ArrayList<Integer>>> soluciones = new ArrayList<ArrayList<ArrayList<Integer>>>();
+	
+
+	//Genera la lista de soluciones 
+	public void generarSoluciones( int cantidad,ArrayList<Integer> pMonDisponibles){
+		
+		ArrayList<ArrayList<Integer>> resultado = new ArrayList<ArrayList<Integer>>();
+		
+		
+		//for(int i = 0 ; i<pMonDisponibles.size(); i++){
+			
+			
+				
+			//}
+		}
+		
+	
+
+	// Genera una lista con monedas posibles
+
+	public void generoSolucion(int pCantidad,ArrayList<Integer> pMonDisp, int pIndice){
+		
+		ArrayList<Integer> sol = new ArrayList<Integer>();
+		int inicio = pIndice;
+		
+		
+		if(pMonDisp.get(inicio) < pCantidad){
+			
+			int num = pCantidad / pMonDisp.get(inicio);
+			
+			if(pCantidad % pMonDisp.get(inicio) != 0){
+				sol.add(pMonDisp.get(inicio));
+				generoSolucion(pCantidad % pMonDisp.get(inicio),pMonDisp, inicio+=1);
+				
+			}
+			
+			
+		}
+		else{
+			
+			
+		}
+		
+	}
+	
+	
+	public ArrayList<Integer> seleccionarSolucion(ArrayList<ArrayList<Integer>> pSoluciones){
+			
+			ArrayList<Integer> mejorCaso = new ArrayList<Integer>();
+			return mejorCaso;
+			
+			
+			
+		}
+		
+	//Getters and Setters
+	
+	public String getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(String cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	
+
+	public Cambio() {
+		
+	}
+
+}

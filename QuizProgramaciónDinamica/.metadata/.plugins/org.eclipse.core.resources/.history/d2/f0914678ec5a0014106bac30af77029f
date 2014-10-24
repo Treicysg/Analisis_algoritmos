@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+
+/*El objetivo es usar la menor cantidad de monedas
+ * El problema recibe la cantidad y una lista con las monedas disponibles**/
+
+public class Cambio {
+	
+	private String cantidad = null;
+	
+	public ArrayList<Integer> monedas = new ArrayList<Integer>();
+	public ArrayList<ArrayList<Integer>> soluciones = new ArrayList<ArrayList<Integer>>();
+	
+	
+	//Getters and Setters
+	
+	public String getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(String cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	public ArrayList<Integer> seleccionarSolucion(ArrayList<ArrayList<Integer>> pSoluciones){
+		
+		ArrayList<Integer> mejorCaso = new ArrayList<Integer>();
+		return mejorCaso;
+		
+		
+		
+	}
+
+	public Cambio() {
+		
+	}
+
+}
