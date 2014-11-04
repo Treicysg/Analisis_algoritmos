@@ -4,49 +4,73 @@ import java.util.Random;
 
 public class Individuo {
 	
-	private int beneficio;
-	private int peso;
+	//private int beneficio;
+	//private int peso;
 	
-	private byte[] genes = new byte[4];
+	//private String nombre;
+	
+	private int[] genes = new int[4];
 	
 	private int fitness= 0;
 	
 	
 	
+	//*******************************************************************//
 	
-	
-	
-	//************************************************************************
-	
-
+    //La siguiente función genera un individuo de forma aleatoria
 	public void generarIndividuo(){
         Random rg = new Random();
         for(int i =0; i < 4; i++){
-            byte gene = (byte) rg.nextInt(2);
+           int gene = (byte) rg.nextInt(2);
             genes[i] = gene;
         }
 	}
+	
+	
+	//*****************Constructores****************************//
 
-	public Individuo(int value3,int value2,int value1,int value0){
-		genes[0]=(byte) value0;
-		genes[1]=(byte) value1;
-		genes[2]=(byte) value2;
-		genes[3]=(byte) value3;
+	public Individuo(int valor3,int valor2,int valor1,int valor0){
+		genes[0]=(byte) valor0;
+		genes[1]=(byte) valor1;
+		genes[2]=(byte) valor2;
+		genes[3]=(byte) valor3;
 		fitness = this.getFitness();
 	}
+	
 	public Individuo(){}
 
 	
-	public byte getGen(int index){
+	//**************GETTERS AND SETTERS***************************//
+	
+	
+	
+	public int getGen(int index){
 		return genes[index];
 	}
 	
-	public int getFitness(){
-		Fitness x = new Fitness();
-		return x.getFitness(this);
+	public void setGen(int index,int value){
+		genes[index]=value;
+		fitness=0;
 	}
 	
 	
+	public void setFitness(int fitness) {
+		this.fitness = fitness;
+	}
+	
+
+	public int getFitness(){
+		int valor =0;
+		
+		for (int i=0;i<=3;i++){
+			int pot = (int)Math.pow(2,i);
+			if (getGen(i)==1){
+				int conversion = getGen(i) * pot;
+				valor = valor+ conversion;
+			}
+		}
+		return (int)Math.pow(valor,2);
+	}
 	
 	
 	

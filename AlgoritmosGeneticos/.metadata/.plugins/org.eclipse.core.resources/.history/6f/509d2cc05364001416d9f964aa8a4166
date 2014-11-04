@@ -1,0 +1,9 @@
+package PaqueteMochila;
+
+public class Elemento {
+
+	public Elemento() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
