@@ -1,0 +1,9 @@
+package PaqueteMochila;
+
+public class Poblacion {
+
+	public Poblacion() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

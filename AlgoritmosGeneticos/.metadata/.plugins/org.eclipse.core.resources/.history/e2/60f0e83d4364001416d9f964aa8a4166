@@ -1,0 +1,18 @@
+package PaqueteMochila;
+
+public class Individuo {
+	
+	private int beneficio;
+	private int peso;
+	
+	private byte[] genes = new byte[4];
+	
+	private int fitness= 0;
+	
+	
+
+	public Individuo() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

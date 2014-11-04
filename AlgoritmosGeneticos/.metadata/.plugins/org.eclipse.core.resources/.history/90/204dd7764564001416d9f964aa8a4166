@@ -1,0 +1,9 @@
+package PaqueteMochila;
+
+public class Fitness {
+
+	public Fitness() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
