@@ -1,0 +1,15 @@
+package PaqueteMochila;
+
+import java.util.ArrayList;
+
+public class ProcesosAG {
+	
+	private Poblacion population;
+	private ArrayList<Integer> fitness_posible=new ArrayList<Integer>();
+	private int max_weight;
+
+	public ProcesosAG() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
