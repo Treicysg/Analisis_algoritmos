@@ -4,16 +4,13 @@ import java.util.Random;
 
 public class Individuo {
 	
-	
+	//private int beneficio;
 	//private int peso;
 	
-	private int value;
-	private String name;
+	//private String nombre;
 	
 	private int[] genes = new int[4];
 	
-	
-
 	private int fitness= 0;
 	
 	
@@ -74,16 +71,6 @@ public class Individuo {
 		}
 		return (int)Math.pow(valor,2);
 	}
-	
-	public int[] getGenes() {
-		return genes;
-	}
-
-
-	public void setGenes(int[] genes) {
-		this.genes = genes;
-	}
-
 	
 	
 	

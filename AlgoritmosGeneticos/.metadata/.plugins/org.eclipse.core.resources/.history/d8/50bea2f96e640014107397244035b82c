@@ -10,11 +10,11 @@ public class Poblacion {
 	public Poblacion (ArrayList<Individuo> x){
 		individuos = new Individuo [x.size()];
 		for (int i=0;i<x.size();i++){
-			almacenarIndividuo(i,x.get(i));
+			guardarIndividuo(i,x.get(i));
 		}
 	}
 	
-	public void almacenarIndividuo(int index,Individuo indiv){
+	public void guardarIndividuo(int index,Individuo indiv){
 		individuos[index] = indiv;
 	}
 	public Individuo getIndividuo(int index){

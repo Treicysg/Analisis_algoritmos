@@ -1,5 +1,5 @@
 package PaqueteMochila;
-import PaqueteMochila.Individuo;
+import PaqueteMochila.*;
 
 import java.util.ArrayList;
 
@@ -7,14 +7,14 @@ public class Poblacion {
 	
 	Individuo[] individuos;
 	
-	public Poblacion (ArrayList<Individuo> x){
+	public Poblacion (ArrayList<Elemento> x){
 		individuos = new Individuo [x.size()];
 		for (int i=0;i<x.size();i++){
-			almacenarIndividuo(i,x.get(i));
+			guardarIndividuo(i,x.get(i).getIndividuo());
 		}
 	}
 	
-	public void almacenarIndividuo(int index,Individuo indiv){
+	public void guardarIndividuo(int index,Individuo indiv){
 		individuos[index] = indiv;
 	}
 	public Individuo getIndividuo(int index){
