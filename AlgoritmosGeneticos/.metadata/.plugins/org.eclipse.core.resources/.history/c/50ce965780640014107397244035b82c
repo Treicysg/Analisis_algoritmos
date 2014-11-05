@@ -40,7 +40,7 @@ public class ProcesosAG {
 		Individuo primerCruce;
 		Individuo segCruce;
 		
-		for(int k=0;k<=pop.individuos.length/2;k+=2){
+		for(int k=0;k<=pop.individuos.length/2;k=k+2){
 			
 			primerCruce= population.getIndividuo(k);
 			segCruce=population.getIndividuo(k+1);
