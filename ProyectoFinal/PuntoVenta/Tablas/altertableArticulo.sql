@@ -1,0 +1,1 @@
+alter table articulo add  marca_articulo VARCHAR2(20);
